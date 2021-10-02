@@ -14,12 +14,15 @@
 		<tr>
 			<td><%= patient.name %></td>
 			<td><%= patient.date %></td>
-			<td><%= link_to "view", patient %></td>
+			<td><%= link_to "View", patient %></td>
+			<td><%= link_to "Edit", edit_patient_path(patient)%></td>
+			<td><%= link_to "Delete", patient, method: :delete%></td>
 		</tr>
 
 
-	</table>
 	<% end %>
+	</table>
 
 <br>
-<%= link_to "Add patient", new_patient_path %>
+
+<button><%= link_to "Add patient", new_patient_path %></button>
