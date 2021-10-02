@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: MyText
+  od: MyText
+  os: MyText
+  add: 1.5
+  assessment: MyText
+
+two:
+  name: MyString
+  date: MyText
+  od: MyText
+  os: MyText
+  add: 1.5
+  assessment: MyText

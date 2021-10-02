@@ -1,0 +1,25 @@
+<h1>Patients</h1>
+
+
+	<table>
+
+		<tr>
+			<th>Name</th>
+			<th>Date (mm-dd-yyyy)</th>
+			<th>Actions</th>
+
+		</tr>
+
+			<% @patients.each do |patient| %>
+		<tr>
+			<td><%= patient.name %></td>
+			<td><%= patient.date %></td>
+			<td><%= link_to "view", patient %></td>
+		</tr>
+
+
+	</table>
+	<% end %>
+
+<br>
+<%= link_to "Add patient", new_patient_path %>

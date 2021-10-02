@@ -1,0 +1,50 @@
+<%= form_with model: patient do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% patient.errors.full_messages_for(:name).each do |message| %>
+          <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :date %><br>
+    <%= form.text_area :date %>
+    <% patient.errors.full_messages_for(:date).each do |message| %>
+          <div><%= message %></div>
+    <% end %>
+
+  </div>
+
+  <div>
+    <%= form.label :od %><br>
+    <%= form.text_area :od %>
+    <% patient.errors.full_messages_for(:od).each do |message| %>
+          <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :os %><br>
+    <%= form.text_area :os %>
+    <% patient.errors.full_messages_for(:os).each do |message| %>
+          <div><%= message %></div>
+    <% end %>
+
+  </div>
+
+  <div>
+    <%= form.label :add %><br>
+    <%= form.text_area :add %>
+  </div>
+
+  <div>
+    <%= form.label :assessment %><br>
+    <%= form.text_area :assessment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>
