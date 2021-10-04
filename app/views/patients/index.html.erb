@@ -1,28 +1,25 @@
-<h1>Patients</h1>
+<h1>Patients Record List</h1>
+	<table class="patients-list">
 
-
-	<table>
-
-		<tr>
+		<tr class="table-header">
 			<th>Name</th>
 			<th>Date (mm-dd-yyyy)</th>
+			<th></th>
 			<th>Actions</th>
-
+			<th></th>
 		</tr>
 
-			<% @patients.each do |patient| %>
 		<tr>
+			<% @patients.each do |patient| %>
 			<td><%= patient.name %></td>
 			<td><%= patient.date %></td>
-			<td><%= link_to "View", patient %></td>
-			<td><%= link_to "Edit", edit_patient_path(patient)%></td>
-			<td><%= link_to "Delete", patient, method: :delete%></td>
+			<td><button><%= link_to "View", patient %></button></td>
+			<td style="text-align: center;"><button><%= link_to "Edit", edit_patient_path(patient)%></button></td>
+			<td><button><%= link_to "Delete", patient, method: :delete%></button></td>
 		</tr>
-
 
 	<% end %>
 	</table>
-
 <br>
 
-<button><%= link_to "Add patient", new_patient_path %></button>
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><%= link_to "Add patient", new_patient_path %></button>

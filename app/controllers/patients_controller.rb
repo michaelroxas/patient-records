@@ -42,7 +42,6 @@ class PatientsController < ApplicationController
     redirect_to root_path
   end
 
-
   private
     def patient_params
       params.require(:patient).permit(:name, :date, :od, :os, :add, :assessment)
