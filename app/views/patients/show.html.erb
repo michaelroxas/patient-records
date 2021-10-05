@@ -1,25 +1,39 @@
-<h1><%= @patient.name %> </h1>
+<div class="wrapper antialiased text-gray-900">
+<div>
+    
+ <div class="relative px-4 -mt-16  ">
+   <div class="bg-white p-6 rounded-lg shadow-lg">
+    <div class="flex items-baseline">
 
-<p>Date of consulation: <%= @patient.date %></p>
+      <div class="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
+    <%= @patient.date %></p>
+  </div>  
+    </div>
+    
+    <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate"><%= @patient.name %></h4>
+ <br>
+  <div class="mt-1">
+    RIGHT EYE: 
+    <span class="text-gray-600 text-sm"> <%= @patient.od %></span>
+  </div>
+    <div class="mt-1">
+    LEFT EYE: 
+    <span class="text-gray-600 text-sm"> <%= @patient.os %></span>
+  </div>
+    <div class="mt-1">
+    ADD: 
+    <span class="text-gray-600 text-sm"> <%= @patient.add %></span>
+  </div>
+  <div class="mt-4">
+    <span class="text-sm text-gray-600"><%= @patient.assessment %></span>
+  </div>  
+  </div>
+ </div>
+  
+<button><%= link_to "Edit", edit_patient_path(@patient) %></button>
+<button><%= link_to "Delete", patient_path(@patient), method: :delete %></button>
+<button><%= link_to "Home", root_path(@patient)%></button>
 
-<table>
-	<tr>
-		<th>OD</th>
-		<th>OS</th>
-		<th>Add</th>
-		<th>Assessment</th>
+	</div>
+</div>
 
-	</tr>
-	<tr>
-	    <td><%= @patient.os %></td>
-	    <td><%= @patient.od %></td>
-	    <td><%= @patient.add %></td>
-	    <td><%= @patient.assessment %></td>
-		
-	  </tr>
-</table>
-<br>
-<%= link_to "Edit", edit_patient_path(@patient) %>
-<%= link_to "Delete", patient_path(@patient), method: :delete %> 
-<br><br>
-<%= link_to "Home", root_path(@patient)%>
