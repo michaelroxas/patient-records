@@ -1,13 +1,16 @@
 <h1 class="text-center text-6xl m-40">Add Patient Form</h1>
 
-<form class="w-full max-w-lg justify-center items-center">
+<form class="w-full max-w-lg justify-center items-center bg-green-200">
+<%# <%= form_with model: patient do |form| %> %>
+
   <div class="flex flex-wrap -mx-3 mb-6">
+
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        Patient Name
+        <%# <%= form.label :Name %> %>
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Roxas, Michael">
-      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Roxas, Michael Anthony">
+        <%# <%= form.text_field :name %> %>
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
@@ -34,7 +37,7 @@
       <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
         Add
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="1.00">
+      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="0.00">
     </div>
   </div>
 
@@ -52,6 +55,7 @@
 
 <!-- rails form -->
 <%= form_with model: patient do |form| %>
+<%# name div  %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>
@@ -60,6 +64,7 @@
     <% end %>
   </div>
 
+<%# date of consultation %>
   <div>
     <%= form.label :date %><br>
     <%= form.text_area :date %>
@@ -68,6 +73,7 @@
     <% end %>
   </div>
 
+<%# od %>
   <div>
     <%= form.label :od %><br>
     <%= form.text_area :od %>
@@ -76,6 +82,7 @@
     <% end %>
   </div> 
 
+<%# os %>
   <div>
     <%= form.label :os %><br>
     <%= form.text_area :os %>
@@ -84,18 +91,21 @@
     <% end %>
   </div>
 
+<%# add %>
   <div>
     <%= form.label :add %><br>
     <%= form.text_area :add %>
   </div>
 
+<%# assessment %>
   <div>
     <%= form.label :assessment %><br>
     <%= form.text_area :assessment %>
   </div>
 
-  <div>
+<%# button submit %>
+  <button>
     <%= form.submit %>
-  </div>
-
+  </button>
 <% end %>
+<%= link_to "Home", root_path(@patient)%>
