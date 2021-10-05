@@ -9,3 +9,14 @@ $red: #f1faee;
 $darkLightBlue: #457b9d;
 
 
+html {
+    background: #FAFAFA;
+    background: -webkit-linear-gradient(bottom left, #FAFAFA, #B6CCA8);
+
+}
+
+.wrapper{
+    display:grid;
+    height:100vh;
+    place-items:center
+  }
